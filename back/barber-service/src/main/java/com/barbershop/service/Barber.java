@@ -64,7 +64,7 @@ public class Barber {
 
     @Override
     public String toString() {
-        return String.format("Barber: id = %d name = %s,
+        return String.format("Barber: id = %d name = %s",
                 id, name);
     }
 }
