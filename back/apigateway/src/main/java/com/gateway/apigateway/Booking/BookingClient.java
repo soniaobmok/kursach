@@ -18,12 +18,12 @@ public interface BookingClient {
     @RequestMapping(path = "/booking/user/{id}", method = RequestMethod.GET)
     public @ResponseBody Iterable<Booking> getUsersOrders(@PathVariable Integer id);
 
-    @RequestMapping(path = "/booking/equipment/{id}", method = RequestMethod.GET)
-    public @ResponseBody Iterable<Booking> getEquipmentOrders(@PathVariable Integer id);
+    @RequestMapping(path = "/booking/barber/{id}", method = RequestMethod.GET)
+    public @ResponseBody Iterable<Booking> getBarberOrders(@PathVariable Integer id);
 
     @RequestMapping(path="/booking/{id}", method = RequestMethod.DELETE)
     public @ResponseBody String delete(@PathVariable Integer id) throws CustomException;
 
-    @RequestMapping(path="/booking/equipment/{id}", method = RequestMethod.DELETE)
-    public @ResponseBody String deleteByEquipmentId(@PathVariable Integer id) throws CustomException;
+    @RequestMapping(path="/booking/barber/{id}", method = RequestMethod.DELETE)
+    public @ResponseBody String deleteByBarberId(@PathVariable Integer id) throws CustomException;
 }

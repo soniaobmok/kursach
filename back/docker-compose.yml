@@ -7,7 +7,7 @@ services:
     logging:
       driver: none
     environment:
-      MYSQL_DATABASE: 'tourism'
+      MYSQL_DATABASE: 'barbershop'
       MYSQL_USER: 'admin'
       MYSQL_PASSWORD: 'P@ssw0rd'
       MYSQL_ROOT_PASSWORD: 'P@ssw0rd'
@@ -24,14 +24,14 @@ services:
     depends_on:
       - mysql
  
-  equipment-service:
-    hostname: equipment-service
+  barber-service:
+    hostname: barber-service
     environment:
       - PORT=8082
       - EUREKA_SERVER=http://eurekaserver:8761/eureka
       - MYSQL=mysql:3306
     build:
-     context: equipment-service
+     context: barber-service
      dockerfile: Dockerfile
     ports:
      - "8082:8082"

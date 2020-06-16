@@ -21,6 +21,6 @@ public interface FeedbackClient {
     @RequestMapping(path="/feedback/{id}", method = RequestMethod.DELETE)
     public @ResponseBody String delete(@PathVariable Integer id) throws CustomException;
 
-    @RequestMapping(path="/feedback/equipment/{id}", method = RequestMethod.DELETE)
-    public @ResponseBody String deleteByEquipmentId(@PathVariable Integer id) throws CustomException;
+    @RequestMapping(path="/feedback/barber/{id}", method = RequestMethod.DELETE)
+    public @ResponseBody String deleteByBarberId(@PathVariable Integer id) throws CustomException;
 }

@@ -3,8 +3,8 @@ package com.gateway.apigateway.Feedback;
 import com.gateway.apigateway.Booking.Booking;
 import com.gateway.apigateway.Booking.BookingClient;
 import com.gateway.apigateway.CustomException;
-import com.gateway.apigateway.Equipment.Equipment;
-import com.gateway.apigateway.Equipment.EquipmentClient;
+import com.gateway.apigateway.Barber.Barber;
+import com.gateway.apigateway.Barber.BarberClient;
 import com.gateway.apigateway.User.UserClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,7 +20,7 @@ public class FeedbackController {
     FeedbackClient client;
 
     @Autowired
-    EquipmentClient equipmentClient;
+    BarberClient barberClient;
 
     @Autowired
     BookingClient bookingClient;
@@ -32,10 +32,10 @@ public class FeedbackController {
     public @ResponseBody Feedback add(@RequestBody Feedback feedback,
                                       @RequestHeader(value = "Authorization") String token) throws CustomException {
         userClient.isClient(token);
-        Integer equipmentId = bookingClient.getById(feedback.getBookingId()).getEquipmentId();
-        Equipment equipment = equipmentClient.getById(equipmentId);
-        equipment.setRating((equipment.getRating() + feedback.getRating())/2);
-        equipmentClient.update(equipmentId, equipment);
+        Integer barberId = bookingClient.getById(feedback.getBookingId()).getBarbertId();
+        Barber barber = barberClient.getById(barberId);
+        barber.setRating((barber.getRating() + feedback.getRating())/2);
+        barberClient.update(barberId, barber);
         return client.add(feedback);
     }
 
@@ -54,8 +54,8 @@ public class FeedbackController {
         return client.getByOrderId(id);
     }
 
-    @RequestMapping(path = "/equipment/{id}", method = RequestMethod.GET)
-    public @ResponseBody Iterable<Feedback> getByEquipmentId(@PathVariable Integer id) throws CustomException {
+    @RequestMapping(path = "/barber/{id}", method = RequestMethod.GET)
+    public @ResponseBody Iterable<Feedback> getByBarberId(@PathVariable Integer id) throws CustomException {
         return client.getAll();
     }
 

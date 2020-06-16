@@ -1,8 +1,8 @@
 package com.gateway.apigateway.Booking;
 
 import com.gateway.apigateway.CustomException;
-import com.gateway.apigateway.Equipment.Equipment;
-import com.gateway.apigateway.Equipment.EquipmentClient;
+import com.gateway.apigateway.Barber.Barber;
+import com.gateway.apigateway.Barber.BarberClient;
 import com.gateway.apigateway.User.UserClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,7 +19,7 @@ public class BookingController {
     UserClient userClient;
 
     @Autowired
-    EquipmentClient equipmentClient;
+    BarberClient barberClient;
 
     @RequestMapping(path="", method = RequestMethod.POST)
     public @ResponseBody Booking add(@RequestBody Booking booking,
@@ -33,7 +33,7 @@ public class BookingController {
         userClient.isAdmin(token);
         Iterable<Booking> bookings = client.getAll();
         for(Booking b: bookings) {
-            b.setEq(equipmentClient.getById(b.getEquipmentId()));
+            b.setBr(barberClient.getById(b.getBarberId()));
         }
         return bookings;
     }
@@ -41,7 +41,7 @@ public class BookingController {
     @RequestMapping(path="/{id}", method = RequestMethod.GET)
     public @ResponseBody Booking getById(@PathVariable int id) throws CustomException {
         Booking booking = client.getById(id);
-        booking.setEq(equipmentClient.getById(booking.getEquipmentId()));
+        booking.setBr(barberClient.getById(booking.getBarberId()));
         return client.getById(id);
     };
 
@@ -51,16 +51,16 @@ public class BookingController {
         userClient.isClient(token);
         Iterable<Booking> bookings = client.getUsersOrders(id);
         for(Booking b: bookings) {
-            b.setEq(equipmentClient.getById(b.getEquipmentId()));
+            b.setBr(barberClient.getById(b.getBarberId()));
         }
         return bookings;
     }
 
-    @RequestMapping(path = "/equipment/{id}", method = RequestMethod.GET)
-    public @ResponseBody Iterable<Booking> getEquipmentOrders(@PathVariable Integer id,
+    @RequestMapping(path = "/barber/{id}", method = RequestMethod.GET)
+    public @ResponseBody Iterable<Booking> getBarberOrders(@PathVariable Integer id,
                                                               @RequestHeader(value = "Authorization") String token) {
         userClient.isClient(token);
-        return client.getEquipmentOrders(id);
+        return client.getBarberOrders(id);
     }
 
     @RequestMapping(path="/{id}", method = RequestMethod.DELETE)

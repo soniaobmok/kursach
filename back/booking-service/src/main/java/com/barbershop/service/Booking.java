@@ -1,17 +1,18 @@
-package com.gateway.apigateway.Booking;
+package com.barbershop.service;
 
-import com.gateway.apigateway.Barber.Barber;
-
+import javax.persistence.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+@Entity
 public class Booking {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private Integer clientId;
     private Integer barberId;
-    private Date date;
-    private Barber br;
+    private String date;
 
     public Integer getId() {
         return id;
@@ -22,11 +23,11 @@ public class Booking {
     }
 
     public String getDate() {
-        return (new SimpleDateFormat("dd/MM/yyyy HH:mm:ss")).format(date);
+        return this.date;
     }
 
     public void setDate(String date) throws ParseException {
-        this.date = (new SimpleDateFormat("dd/MM/yyyy HH:mm:ss")).parse(date);
+        this.date = date;
     }
 
     public Integer getClientId() {
@@ -45,7 +46,10 @@ public class Booking {
         this.barberId = barberId;
     }
 
-    public Barber getBr() { return br; }
+    @Override
+    public String toString() {
+        return String.format("Order: id=%d clientId=%d barberId=%d",
+                id, clientId, barberId);
+    }
 
-    public void setBr(Barber br) { this.br = br; }
 }

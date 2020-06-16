@@ -1,19 +1,20 @@
-package com.gateway.apigateway.Feedback;
+package com.barbershop.service;
 
-import com.gateway.apigateway.Booking.Booking;
-
+import javax.persistence.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+@Entity
 public class Feedback {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private Integer bookingId;
+    private Integer barberId;
     private Date date;
     private Integer rating;
     private String text;
-
-    private Integer barberId;
 
     public Integer getId() {
         return id;
@@ -61,6 +62,13 @@ public class Feedback {
 
     public void setBarberId(Integer barberId) {
         this.barberId = barberId;
+    }
+
+
+    @Override
+    public String toString() {
+        return String.format("Feedback: id=%d, bookingId=%d, rating=%d, text=%s",
+                id, bookingId, rating, text);
     }
 
 }
