@@ -1,0 +1,57 @@
+.price {
+    display: flex;
+}
+.card {
+    width: 30vw;
+    margin: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid gray;
+}
+.feedback {
+    width: 20vw;
+    margin: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid gray;
+}
+.feedbacks {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    text-align: center;
+}
+
+.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.group {
+    display: flex;
+}
+
+button, .item {
+    margin: 5px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80%;
+}
+
+form {
+    margin: 50px;
+}

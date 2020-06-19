@@ -1,0 +1,9 @@
+<div class="wrapper">
+    <ng-container *ngFor="let item of orders | async"> 
+        <app-equipment-card 
+            [id]="item.equipmentId" 
+            [date]="item.date.split(' ')[0]" 
+            [routerLink]="['/order', item.id]">
+        </app-equipment-card>
+    </ng-container> 
+</div>

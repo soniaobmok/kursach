@@ -1,0 +1,48 @@
+.group {
+    display: flex;
+}
+
+.card {
+    width: 30vw;
+    margin: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid gray;
+}
+
+.wrapper {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   flex-direction: column;
+}
+
+.products {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+}
+
+.search {
+    width: 30vw;
+    margin: 30px;
+}
+
+.filter {
+   margin-bottom: 30px;
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+}
+
+.title {
+    text-align: center;
+}
+
+.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}

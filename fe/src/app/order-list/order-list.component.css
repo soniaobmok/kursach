@@ -1,0 +1,33 @@
+.group {
+    display: flex;
+}
+
+.card {
+    width: 30vw;
+    margin: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid gray;
+}
+
+.title {
+    text-align: center;
+}
+
+.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.group {
+    display: flex;
+}
+
+.wrapper {
+   height: 80%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+}

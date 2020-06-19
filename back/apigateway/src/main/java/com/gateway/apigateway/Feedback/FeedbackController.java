@@ -32,7 +32,7 @@ public class FeedbackController {
     public @ResponseBody Feedback add(@RequestBody Feedback feedback,
                                       @RequestHeader(value = "Authorization") String token) throws CustomException {
         userClient.isClient(token);
-        Integer barberId = bookingClient.getById(feedback.getBookingId()).getBarbertId();
+        Integer barberId = bookingClient.getById(feedback.getBookingId()).getBarberId();
         Barber barber = barberClient.getById(barberId);
         barber.setRating((barber.getRating() + feedback.getRating())/2);
         barberClient.update(barberId, barber);
