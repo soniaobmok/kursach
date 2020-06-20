@@ -14,8 +14,6 @@ export class BarberDetailsComponent implements OnInit {
   public id;
   public feedbacks;
   public name;
-  // public price;
-  // public type;
   public description;
   public rating;
 
@@ -26,8 +24,6 @@ export class BarberDetailsComponent implements OnInit {
     this._be.getBarberDetails(this.id).pipe(
       tap((res: Barber) => {
         this.name = res.name,
-        // this.price = res.price,
-        // this.type = res.type,
         this.description = res.description,
         this.rating = res.rating
       })
@@ -51,7 +47,7 @@ export class BarberDetailsComponent implements OnInit {
   }
 
   public update() {
-    this._be.updateBarber(this.id, this.name, // this.type, this.price, 
+    this._be.updateBarber(this.id, this.name,
       this.rating, this.description).subscribe(
       () => alert("Updated!"),
       () => alert("Update failed!")

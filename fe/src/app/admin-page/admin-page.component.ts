@@ -11,8 +11,6 @@ export class AdminPageComponent implements OnInit {
 
   public id;
   public name;
-  // public price;
-  // public type;
   public description;
 
   constructor(private _be: BackendService) { }

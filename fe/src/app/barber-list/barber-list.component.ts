@@ -12,8 +12,6 @@ export class BarberListComponent implements OnInit {
 
   public eq;
   public name = "";
-  // filter: string = "all";
-  // types: string[] = ['all', 'backpack', 'tent', 'clothing', 'sleeping back'];
 
   constructor(private _be: BackendService) { }
 
@@ -23,7 +21,6 @@ export class BarberListComponent implements OnInit {
 
   public corresponds(name, type) {
     return (name.includes(this.name) || this.name === '') 
-      // && (this.filter === type || this.filter === 'all')
   }
 
   ngOnInit() {

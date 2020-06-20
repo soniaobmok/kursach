@@ -95,7 +95,7 @@ export class BackendService {
         )
     }
 
-    public addBarber(name: string,// type: string, price: number, 
+    public addBarber(name: string,
         rating: number, description: string) {
         const url = `${BackendService.apiPath}${BackendService.eqPath}`;
         return this._http.post(url, {name, rating, description},
@@ -110,7 +110,7 @@ export class BackendService {
         )
     }
 
-    public updateBarber(id: number, name: string, //type: string, 
+    public updateBarber(id: number, name: string,
             rating: number, description: string) {
         const url = `${BackendService.apiPath}${BackendService.eqPath}/${id}`;
 

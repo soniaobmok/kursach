@@ -5,13 +5,6 @@
             <mat-icon matSuffix>search</mat-icon>
         </mat-form-field>
         <br/>
-        <!-- <mat-radio-group aria-label="Select an option" [(ngModel)]="filter" name="filter" class="filter">
-            <mat-radio-button value="all">All</mat-radio-button>
-            <mat-radio-button value="backpack">Backpack</mat-radio-button>
-            <mat-radio-button value="tent">Tent</mat-radio-button>
-            <mat-radio-button value="clothing">Clothing</mat-radio-button>
-            <mat-radio-button value="bag">Sleeping bag</mat-radio-button>
-        </mat-radio-group> -->
     </form>
     <div class="products">
         <ng-container *ngFor="let item of eq | async" class="card">

@@ -1,8 +1,6 @@
 export interface Barber {
     id: number;
     name: string;
-    // price: string;
-    // type: string;
     rating: number;
     description: string;
 }
