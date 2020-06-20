@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BackendService } from '../services/backend.service';
-import { Order, Equipment } from '../types';
+import { Order, Barber } from '../types';
 import { Router, ActivatedRoute } from '@angular/router';
 import { map, tap, concatMap } from "rxjs/operators";
 
@@ -22,14 +22,14 @@ export class OrderDetailsComponent implements OnInit {
     this._be.getBooking(this.route.snapshot.paramMap.get("id")).subscribe(
       (res: Order) => {
         this.order = res;
-        this.id = res.equipmentId;
+        this.id = res.barberId;
       }
     );
   }
 
   sendFeedback() {
     this._be.postFeedback(this.route.snapshot.paramMap.get("id"), 
-    this.text, this.rating, this.order.equipmentId).subscribe(
+    this.text, this.rating, this.order.barberId).subscribe(
       () => alert("Feedback saved!"),
       (error) => alert("Feedback saved!")
     );

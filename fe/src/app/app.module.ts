@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EquipmentListComponent } from './equipment-list/equipment-list.component';
-import { EquipmentDetailsComponent } from './equipment-details/equipment-details.component';
+import { BarberListComponent } from './barber-list/barber-list.component';
+import { BarberDetailsComponent } from './barber-details/barber-details.component';
 import { OrderListComponent } from './order-list/order-list.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { AuthGuard, AdminAuthGuard } from './services/auth-guard.service';
@@ -18,18 +18,18 @@ import {MatInputModule} from '@angular/material/input'
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
-import { EquipmentCardComponent } from './equipment-card/equipment-card.component';
+import { BarberCardComponent } from './barber-card/barber-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EquipmentListComponent,
-    EquipmentDetailsComponent,
+    BarberListComponent,
+    BarberDetailsComponent,
     OrderListComponent,
     AdminPageComponent,
     LoginComponent,
     OrderDetailsComponent,
-    EquipmentCardComponent
+    BarberCardComponent
   ],
   imports: [
     FormsModule,

@@ -2,14 +2,14 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { map, tap, concatMap } from "rxjs/operators";
 import { HttpClient } from "@angular/common/http";
-import { Equipment, Auth, Roles, Feedback } from "../types";
+import { Barber, Auth, Roles, Feedback } from "../types";
 
 @Injectable({
   providedIn: "root"
 })
 export class BackendService {
     static apiPath = "http://localhost:8080/";
-    static eqPath = "equipment";
+    static eqPath = "barber";
     static bookingPath = "booking";
     static userPath = "user";
     static find = "find";
@@ -81,48 +81,48 @@ export class BackendService {
     }
 
 
-    public getEquipmentList() {
+    public getBarberList() {
         const url = `${BackendService.apiPath}${BackendService.eqPath}`;
         return this._http.get(url,
           { headers: this.getBasicHeaders() }
         )
     }
 
-    public getEquipmentDetails(id: string) {
+    public getBarberDetails(id: string) {
         const url = `${BackendService.apiPath}${BackendService.eqPath}/${id}`;
         return this._http.get(url,
           { headers: this.getBasicHeaders() }
         )
     }
 
-    public addEquipment(name: string, type: string, price: number, 
+    public addBarber(name: string,// type: string, price: number, 
         rating: number, description: string) {
         const url = `${BackendService.apiPath}${BackendService.eqPath}`;
-        return this._http.post(url, {name, type, price, rating, description},
+        return this._http.post(url, {name, rating, description},
             { headers: this.getAuthHeaders() },
         )
     }
     
-    public deleteEquipment(id: number) {
+    public deleteBarber(id: number) {
         const url = `${BackendService.apiPath}${BackendService.eqPath}/${id}`;
         return this._http.delete(url,
           { headers: this.getAuthHeaders() }
         )
     }
 
-    public updateEquipment(id: number, name: string, type: string, 
-            price: number, rating: number, description: string) {
+    public updateBarber(id: number, name: string, //type: string, 
+            rating: number, description: string) {
         const url = `${BackendService.apiPath}${BackendService.eqPath}/${id}`;
 
-        return this._http.put(url, {name, type, price, rating, description},
+        return this._http.put(url, {name, rating, description},
             { headers: this.getAuthHeaders() }
           )
     }
 
-    public addBooking(equipmentId) {
+    public addBooking(barberId) {
         const date = '05/07/2020 20:00:00';
         const url = `${BackendService.apiPath}${BackendService.bookingPath}`;
-        return this._http.post(url, {touristId:  this.auth.user.id.toString(), equipmentId, date},
+        return this._http.post(url, {touristId:  this.auth.user.id.toString(), barberId, date},
             { headers: this.getAuthHeaders() },
         )
     }
@@ -144,21 +144,21 @@ export class BackendService {
         );
     }
 
-    public getFeedbacksByEquipmentList(id) {
+    public getFeedbacksByBarberList(id) {
         const url = `${BackendService.apiPath}${BackendService.feedback}`;
         return this._http.get(url,
             { headers: this.getBasicHeaders() }
         ).pipe(
             map((res: Array<Feedback>) => res.filter(f => {
-                return Number(f.equipmentId) ===  Number(id);
+                return Number(f.barberId) ===  Number(id);
             }))
         );
     }
 
-    public postFeedback(bookingId, text, rating, equipmentId) {
+    public postFeedback(bookingId, text, rating, barberId) {
         const date = '05/07/2020 20:00:00';
         const url = `${BackendService.apiPath}${BackendService.feedback}`;
-        return this._http.post(url, {bookingId, text, rating, date, equipmentId},
+        return this._http.post(url, {bookingId, text, rating, date, barberId},
             { headers: this.getAuthHeaders() }
         );
     }

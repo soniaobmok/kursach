@@ -11,8 +11,8 @@ export class AdminPageComponent implements OnInit {
 
   public id;
   public name;
-  public price;
-  public type;
+  // public price;
+  // public type;
   public description;
 
   constructor(private _be: BackendService) { }
@@ -21,8 +21,8 @@ export class AdminPageComponent implements OnInit {
   }
 
   public add() {
-    if(this.name && this.type && this.price, this.description) {
-      this._be.addEquipment(this.name, this.type, this.price, 1, this.description).subscribe(
+    if(this.name, this.description) {
+      this._be.addBarber(this.name, 1, this.description).subscribe(
         () => alert("Saved!"),
         () => alert("Saved!")
       )
@@ -32,8 +32,8 @@ export class AdminPageComponent implements OnInit {
   }
 
   public update() {
-    if(this.id && (this.name || this.type || this.price || this.description)) {
-      this._be.updateEquipment(this.id, this.name, this.type, this.price, 1, this.description).subscribe(
+    if(this.id && (this.name || this.description)) {
+      this._be.updateBarber(this.id, this.name, 1, this.description).subscribe(
         () => alert("Updated!"),
         () => alert("Updated!")
       )
@@ -44,7 +44,7 @@ export class AdminPageComponent implements OnInit {
 
   public delete() {
     if (this.id) {
-      this._be.deleteEquipment(this.id).subscribe(
+      this._be.deleteBarber(this.id).subscribe(
         () => alert("Deleted!")
       )
     } else {

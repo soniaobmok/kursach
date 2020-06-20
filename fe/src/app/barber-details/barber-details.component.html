@@ -1,6 +1,6 @@
 <div class="wrapper">
     <ng-container *ngIf="!isAdmin()">
-        <app-equipment-card [id]="id"></app-equipment-card>
+        <app-barber-card [id]="id"></app-barber-card>
         <button mat-raised-button color="primary" (click)="order()">
             Order
         </button>
@@ -15,17 +15,17 @@
         </div>
     </ng-container>
     <ng-container *ngIf="isAdmin()">
-        <app-equipment-card [id]="id"></app-equipment-card>
+        <app-barber-card [id]="id"></app-barber-card>
         <form>
             <mat-form-field class="example-full-width" class="item">
                 <input matInput placeholder="Name" [(ngModel)]="name" name="name">
             </mat-form-field>
-            <mat-form-field class="example-full-width" class="item">
+            <!-- <mat-form-field class="example-full-width" class="item">
                 <input matInput placeholder="Type" [(ngModel)]="type" name="type">
             </mat-form-field>
             <mat-form-field class="example-full-width" class="item">
                 <input matInput placeholder="Price" [(ngModel)]="price" name="price">
-            </mat-form-field>
+            </mat-form-field> -->
             <mat-form-field class="example-full-width" class="item">
                 <input matInput placeholder="Description" [(ngModel)]="description" name="description">
             </mat-form-field>

@@ -3,11 +3,11 @@ import { BackendService } from '../services/backend.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-equipment-card',
-  templateUrl: './equipment-card.component.html',
-  styleUrls: ['./equipment-card.component.css']
+  selector: 'app-barber-card',
+  templateUrl: './barber-card.component.html',
+  styleUrls: ['./barber-card.component.css']
 })
-export class EquipmentCardComponent implements OnInit {
+export class BarberCardComponent implements OnInit {
 
   public item$;
   public image;
@@ -17,6 +17,6 @@ export class EquipmentCardComponent implements OnInit {
   constructor(private _be: BackendService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.item$ = this._be.getEquipmentDetails(this.id);
+    this.item$ = this._be.getBarberDetails(this.id);
   }
 }

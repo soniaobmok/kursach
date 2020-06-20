@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { BackendService } from '../services/backend.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Equipment } from '../types';
+import { Barber } from '../types';
 import { tap } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-equipment-details',
-  templateUrl: './equipment-details.component.html',
-  styleUrls: ['./equipment-details.component.css']
+  selector: 'app-barber-details',
+  templateUrl: './barber-details.component.html',
+  styleUrls: ['./barber-details.component.css']
 })
-export class EquipmentDetailsComponent implements OnInit {
+export class BarberDetailsComponent implements OnInit {
 
   public id;
   public feedbacks;
   public name;
-  public price;
-  public type;
+  // public price;
+  // public type;
   public description;
   public rating;
 
@@ -23,16 +23,16 @@ export class EquipmentDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get("id");
-    this._be.getEquipmentDetails(this.id).pipe(
-      tap((res: Equipment) => {
+    this._be.getBarberDetails(this.id).pipe(
+      tap((res: Barber) => {
         this.name = res.name,
-        this.price = res.price,
-        this.type = res.type,
+        // this.price = res.price,
+        // this.type = res.type,
         this.description = res.description,
         this.rating = res.rating
       })
     ).subscribe()
-    this._be.getFeedbacksByEquipmentList(this.id).subscribe(
+    this._be.getFeedbacksByBarberList(this.id).subscribe(
       res => {
         this.feedbacks = res
       }
@@ -51,7 +51,7 @@ export class EquipmentDetailsComponent implements OnInit {
   }
 
   public update() {
-    this._be.updateEquipment(this.id, this.name, this.type, this.price, 
+    this._be.updateBarber(this.id, this.name, // this.type, this.price, 
       this.rating, this.description).subscribe(
       () => alert("Updated!"),
       () => alert("Update failed!")
@@ -59,7 +59,7 @@ export class EquipmentDetailsComponent implements OnInit {
   }
 
   public delete() {
-    this._be.deleteEquipment(this.id).subscribe(
+    this._be.deleteBarber(this.id).subscribe(
       () => alert("Deleted!"),
       () => alert("Delete failed!")
     )

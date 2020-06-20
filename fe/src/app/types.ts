@@ -1,8 +1,8 @@
-export interface Equipment {
+export interface Barber {
     id: number;
     name: string;
-    price: string;
-    type: string;
+    // price: string;
+    // type: string;
     rating: number;
     description: string;
 }
@@ -24,8 +24,8 @@ export interface Order {
     id: number;
     date: string;
     touristId: string;
-    equipmentId: string;
-    equipment: Equipment;
+    barberId: string;
+    barber: Barber;
 }
 
 export interface Feedback {
@@ -33,7 +33,7 @@ export interface Feedback {
     date: string;
     rating: number;
     text: string;
-    equipmentId: number;
+    barberId: number;
 }
 
 export enum Roles { 
