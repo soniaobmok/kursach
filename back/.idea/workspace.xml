@@ -3,7 +3,67 @@
   <component name="ChangeListManager">
     <list default="true" id="e552a21a-2b09-47b0-8171-ab45508324f5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/com/gateway/apigateway/Barber/Barber.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/com/gateway/apigateway/Barber/Barber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/com/gateway/apigateway/Barber/BarberClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/com/gateway/apigateway/Barber/BarberClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/com/gateway/apigateway/Barber/BarberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/com/gateway/apigateway/Barber/BarberController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/com/gateway/apigateway/Feedback/FeedbackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/com/gateway/apigateway/Feedback/FeedbackController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/barber-service/src/main/java/com/barbershop/service/Barber.java" beforeDir="false" afterPath="$PROJECT_DIR$/barber-service/src/main/java/com/barbershop/service/Barber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/barber-service/src/main/java/com/barbershop/service/BarberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/barber-service/src/main/java/com/barbershop/service/BarberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/barber-service/src/main/java/com/barbershop/service/BarberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/barber-service/src/main/java/com/barbershop/service/BarberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.http" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/browserslist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/e2e/protractor.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/e2e/src/app.e2e-spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/e2e/src/app.po.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/e2e/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/admin-page/admin-page.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/admin-page/admin-page.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/admin-page/admin-page.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/barber-card/barber-card.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/barber-card/barber-card.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/barber-card/barber-card.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/barber-details/barber-details.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/barber-details/barber-details.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/barber-details/barber-details.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/barber-list/barber-list.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/barber-list/barber-list.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/barber-list/barber-list.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/login/login.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/login/login.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/login/login.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/order-details/order-details.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/order-details/order-details.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/order-details/order-details.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/order-list/order-list.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/order-list/order-list.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/order-list/order-list.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/services/auth-guard.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/services/backend.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/app/types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/tslint.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

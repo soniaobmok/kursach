@@ -48,11 +48,6 @@ public class BarberController {
         return client.getIdByName(name);
     }
 
-//    @RequestMapping(path="/filter/{type}", method = RequestMethod.GET)
-//    public @ResponseBody Iterable<Barber> getByFilter(@PathVariable String type) {
-//        return client.getByFilter(type);
-//    }
-
     @RequestMapping(path="/{id}", method = RequestMethod.PUT)
     public @ResponseBody Barber update(@PathVariable Integer id,
                                           @RequestBody Barber barber,

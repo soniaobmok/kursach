@@ -59,7 +59,6 @@ public class FeedbackController {
         return client.getAll();
     }
 
-    //@PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(path="/{id}", method = RequestMethod.DELETE)
     public @ResponseBody String delete(@PathVariable Integer id,
                                        @RequestHeader(value = "Authorization") String token) throws CustomException {

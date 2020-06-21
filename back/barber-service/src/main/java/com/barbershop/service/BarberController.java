@@ -34,17 +34,11 @@ public class BarberController {
         return repository.findByName(name);
     }
 
-//    @RequestMapping(path="/filter/{type}", method = RequestMethod.GET)
-//    public @ResponseBody Iterable<Barber> getByFilter(@PathVariable String type) {
-//        return repository.findByType(type);
-//    }
-
     @RequestMapping(path="/{id}", method = RequestMethod.PUT)
     public @ResponseBody Barber update(@PathVariable Integer id,
                                           @RequestBody Barber barber) throws CustomException {
         repository.findById(id).orElseThrow(() -> new CustomException("Item wasn't found"));
         repository.customUpdate(id, barber.getName(),
-//                barber.getPrice(), barber.getType(),
                 barber.getDescription(), barber.getRating());
         barber.setId(id);
         return barber;

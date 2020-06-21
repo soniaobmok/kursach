@@ -18,9 +18,6 @@ public interface BarberClient {
     @RequestMapping(path="/barber/find/{name}", method = RequestMethod.GET)
     public @ResponseBody Barber getIdByName(@PathVariable String name);
 
-//    @RequestMapping(path="/barber/filter/{type}", method = RequestMethod.GET)
-//    public @ResponseBody Iterable<Barber> getByFilter(@PathVariable String type);
-
     @RequestMapping(path="/barber/{id}", method = RequestMethod.PUT)
     public @ResponseBody Barber update(@PathVariable Integer id,
                                           @RequestBody Barber barber) throws CustomException;
